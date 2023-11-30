@@ -81,7 +81,7 @@ public class User {
 	
 	public void setMobileNo(String mobileNo) {
 		Pattern p = Pattern.compile("^91 [789][0-9]{9}");
-        Matcher m = p.matcher("91 9364646569");
+        Matcher m = p.matcher(mobileNo);
     
         if(m.matches()){
             this.mobileNo = mobileNo;
@@ -94,11 +94,22 @@ public class User {
 	public String getMobileNo() {
 		return mobileNo;
 	}
+	
+	public void setPassword(String password) {
+		Pattern p = Pattern.compile("^[a-z]{8}");
+        Matcher m = p.matcher(password);
+    
+        if(m.matches()){
+        	this.password = password;
+        }
+        else{
+            System.out.println("It Invalid Passwords");
+        }
+
+	}
+	
 	public String getPassword() {
 		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
 	}
 	
 	
