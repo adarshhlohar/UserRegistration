@@ -33,15 +33,4 @@ public class UserOperation {
 		user.setPassword(sc.next());
 	}
 
-	public void updateUser() {
-
-	}
-
-	public void deleteUser() {
-
-	}
-
-	public void loginUser() {
-
-	}
 }
