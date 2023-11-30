@@ -28,7 +28,7 @@ public class UserOperation {
 		System.out.println("Enter the Email:");
 		user.setEmail(sc.next());
 		System.out.println("Enter the Mobile No:");
-		user.setMobileNo(sc.nextLong());
+		user.setMobileNo(sc.next());
 		System.out.println("Enter the password:");
 		user.setPassword(sc.next());
 	}
