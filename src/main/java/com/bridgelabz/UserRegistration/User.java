@@ -8,7 +8,7 @@ public class User {
 	private String fName;
 	private String lName;
 	private String email;
-	private long mobileNo;
+	private String mobileNo;
 	private String password;
 	
 	
@@ -71,7 +71,7 @@ public class User {
             this.email = email;
         }
         else{
-            System.out.println("It cannot be matches");
+            System.out.println("Its Invalid email");
         }
 	}
 	
@@ -79,11 +79,19 @@ public class User {
 		return email;
 	}
 	
-	public void setMobileNo(long mobileNo) {
-		this.mobileNo = mobileNo;
+	public void setMobileNo(String mobileNo) {
+		Pattern p = Pattern.compile("^91 [789][0-9]{9}");
+        Matcher m = p.matcher("91 9364646569");
+    
+        if(m.matches()){
+            this.mobileNo = mobileNo;
+        }
+        else{
+            System.out.println("It Invalid Mobile no");
+        }
 	}
 	
-	public long getMobileNo() {
+	public String getMobileNo() {
 		return mobileNo;
 	}
 	public String getPassword() {
