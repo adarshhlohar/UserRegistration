@@ -11,11 +11,17 @@ public class User {
 	private long mobileNo;
 	private String password;
 	
-	public String getfName() {
-		return fName;
-	}
+	
+	/*
+    @Desc: In this function we can match the pattern and if the pattern matches it will set the name or it will gives the invalid name    
+
+    @param:It will takes String name as input
+
+    @return: It will cannot return any value void
+	 */
 	public void setfName(String fName) {
-		Pattern p = Pattern.compile("^[A-Z][a-z]{2,}$");//. represents single character  
+		// It should matching only the pattern which can start with the Caps And Min 3 char in that have
+		Pattern p = Pattern.compile("^[A-Z][a-z]{2,}$");
 		Matcher m = p.matcher(fName);  
 		if(m.matches()) {  
 		this.fName = fName;
@@ -24,12 +30,29 @@ public class User {
 			System.out.println("This is invalid");
 		}
 	}
+	
+	//It will return String as first Name if user will call the method 	
+	public String getfName() {
+		return fName;
+	}
+	
+	
+	public void setlName(String lName) {
+		Pattern p = Pattern.compile("^[A-Z][a-z]{2,}$");
+		Matcher m = p.matcher(lName);  
+		if(m.matches()) {  
+		this.lName = lName;
+		}
+		else {
+			System.out.println("This is invalid");
+		}
+	}
+	
+	
 	public String getlName() {
 		return lName;
 	}
-	public void setlName(String lName) {
-		this.lName = lName;
-	}
+	
 	public String getEmail() {
 		return email;
 	}
