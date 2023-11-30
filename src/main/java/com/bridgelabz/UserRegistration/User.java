@@ -53,18 +53,38 @@ public class User {
 		return lName;
 	}
 	
+	
+	
+	/*
+    @Desc: In this function we can match the pattern of email and if the pattern matches it will set the email or it will gives the invalid email    
+
+    @param:It will takes String email as input
+
+    @return: It will cannot return any value its void
+	 */
+	public void setEmail(String email) {
+		// if email is in "abc.xyz@bl.co.in" that formate it will matches the email
+		// the validation for the email is E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl& co) and 2 optional (xyz & in) with precise @ and . positions
+		Pattern p = Pattern.compile("^abc.[a-z]{0,5}@bl.co.(in)?");
+        Matcher m = p.matcher(email);
+        if(m.matches()){
+            this.email = email;
+        }
+        else{
+            System.out.println("It cannot be matches");
+        }
+	}
+	
 	public String getEmail() {
 		return email;
 	}
 	
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public long getMobileNo() {
-		return mobileNo;
-	}
 	public void setMobileNo(long mobileNo) {
 		this.mobileNo = mobileNo;
+	}
+	
+	public long getMobileNo() {
+		return mobileNo;
 	}
 	public String getPassword() {
 		return password;
