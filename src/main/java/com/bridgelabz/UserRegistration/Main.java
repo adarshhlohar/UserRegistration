@@ -4,8 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		System.out.println("This is the new Regex Project !!!");
-		UserOperation userOperartion = new UserOperation();
-		userOperartion.registraterUser();
+		User user = new User();
 	}
 
 }
