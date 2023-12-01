@@ -6,5 +6,4 @@ public class Main {
 		System.out.println("This is the new Regex Project !!!");
 		User user = new User();
 	}
-
 }
