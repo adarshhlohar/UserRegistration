@@ -105,7 +105,7 @@ class User implements IUser{
 	@Override
 	public boolean validatePassword(String password) {
 //		Use Case 6 Rule2  Should have at least 1 Upper Case - NOTE – All rules must
-		Pattern p = Pattern.compile("^[A-Z](?=.*[a-z])(?=.*\\d).{7,}$");
+		Pattern p = Pattern.compile("^[A-Z](?=.*[a-z])(?=.*\\d)(?=(.*[@$#@&]){1}).{7}$");
         Matcher m = p.matcher(password);
     
         if(m.matches()){

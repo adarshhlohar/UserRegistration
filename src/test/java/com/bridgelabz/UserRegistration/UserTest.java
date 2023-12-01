@@ -16,7 +16,7 @@ public class UserTest {
 	@Test
 	public void validateName() {
 		// Testing the validation of the first name "Adarsh" it will gives true
-		assertTrue(user.validatePassword("Adhhshgd"));
+		assertTrue(user.validatePassword("Adh7@dgd"));
 		// Testing the validation of the email "adarsh" it will gives the false
 //		assertTrue(user.validateEmail("adarsh"));
 	}
