@@ -21,7 +21,7 @@ class User implements IUser {
 	 * @return: It will cannot return any value void
 	 */
 	@Override
-	public boolean validateFirstName(String fName) {
+	public boolean validateFirstName(String fName) throws InvalidPatternException{
 //		Use case 1
 		// It should matching only the pattern which can start with the Caps And Min 3
 		// char in that have
@@ -30,7 +30,7 @@ class User implements IUser {
 		if (m.matches()) {
 			return true;
 		} else {
-			return false;
+			throw new InvalidPatternException("The first name pattern does not be match");
 		}
 	}
 
@@ -43,14 +43,14 @@ class User implements IUser {
 	 * @return: It will cannot return any value void
 	 */
 	@Override
-	public boolean validateLastName(String lName) {
+	public boolean validateLastName(String lName) throws InvalidPatternException {
 //		USe Case 2
 		Pattern p = Pattern.compile("^[A-Z][a-z]{2,}$");
 		Matcher m = p.matcher(lName);
 		if (m.matches()) {
 			return true;
 		} else {
-			return false;
+			throw new InvalidPatternException("The last name pattern does not be match");
 		}
 	}
 
@@ -63,7 +63,7 @@ class User implements IUser {
 	 * @return: It will cannot return any value its void
 	 */
 	@Override
-	public boolean validateEmail(String email) {
+	public boolean validateEmail(String email) throws InvalidPatternException{
 		// if email is in "abc.xyz@bl.co.in" that formate it will matches the email
 		// the validation for the email is E.g. abc.xyz@bl.co.in - Email has 3 mandatory
 		// parts (abc, bl& co) and 2 optional (xyz & in) with precise @ and . positions
@@ -72,7 +72,7 @@ class User implements IUser {
 		if (m.matches()) {
 			return true;
 		} else {
-			return false;
+			throw new InvalidPatternException("The Email pattern does not be match");
 		}
 	}
 
@@ -86,14 +86,14 @@ class User implements IUser {
 	 * @return: It will cannot return any value its void
 	 */
 	@Override
-	public boolean validateMobileNo(String mobileNo) {
+	public boolean validateMobileNo(String mobileNo) throws InvalidPatternException{
 		Pattern p = Pattern.compile("^91 [789][0-9]{9}$");
 		Matcher m = p.matcher(mobileNo);
 
 		if (m.matches()) {
 			return true;
 		} else {
-			return false;
+			throw new InvalidPatternException("The mobile Number pattern does not be match");
 		}
 	}
 
@@ -106,7 +106,7 @@ class User implements IUser {
 	 * @return: It will cannot return any value its void
 	 */
 	@Override
-	public boolean validatePassword(String password) {
+	public boolean validatePassword(String password) throws InvalidPatternException{
 //		Use Case 6 Rule2  Should have at least 1 Upper Case - NOTE – All rules must
 		Pattern p = Pattern.compile("^[A-Z](?=.*[a-z])(?=.*\\d)(?=(.*[@$#@&]){1}).{7}$");
 		Matcher m = p.matcher(password);
@@ -114,7 +114,7 @@ class User implements IUser {
 		if (m.matches()) {
 			return true;
 		} else {
-			return false;
+			throw new InvalidPatternException("The password pattern does not be match");
 		}
 
 	}
